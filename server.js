@@ -22,13 +22,11 @@ var router = express.Router();              // get an instance of the express Ro
 
 router.route('/boards')
 
-    // create a bear (accessed at POST http://localhost:8080/api/bears)
     .post(function(req, res) {
         
-        var board = new Board();      // create a new instance of the Bear model
-        board.name = req.body.name;  // set the bears name (comes from the request)
+        var board = new Board();      
+        board.name = req.body.name;  
 
-        // save the bear and check for errors
         board.save(function(err) {
             if (err)
                 res.send(err);
