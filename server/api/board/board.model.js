@@ -1,12 +1,17 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+    Schema = mongoose.Schema,
+    Sticky = mongoose.model('Sticky').schema;
 
 var BoardSchema = new Schema({
   name: String,
-  info: String,
-  active: Boolean
+  description: String,
+  active: Boolean,
+  type: {
+    name: String,
+    section: [Sticky]
+  }
 });
 
 module.exports = mongoose.model('Board', BoardSchema);
