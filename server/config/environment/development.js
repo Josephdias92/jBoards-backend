@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/jboardsbackend-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };
