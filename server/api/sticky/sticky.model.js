@@ -5,8 +5,9 @@ var mongoose = require('mongoose'),
 
 var StickySchema = new Schema({
   name: String,
-  info: String,
-  active: Boolean
+  originalName: String,
+  active: Boolean,
+  data: Array
 });
 
 module.exports = mongoose.model('Sticky', StickySchema);
