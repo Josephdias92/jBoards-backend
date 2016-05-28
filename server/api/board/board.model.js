@@ -7,7 +7,11 @@ var mongoose = require('mongoose'),
 var SectionSchema = new Schema({
   name: String,
   originalName: String,
-  board:{ type: Schema.Types.ObjectId, ref: 'Board' },
+  color: String,
+  board: {
+    type: Schema.Types.ObjectId,
+    ref: 'Board'
+  },
   data: [Sticky]
 })
 
@@ -15,9 +19,10 @@ var BoardSchema = new Schema({
   name: String,
   description: String,
   active: Boolean,
+  private: Boolean,
   type: {
-    name:String,
-    section:[SectionSchema]
+    name: String,
+    section: [SectionSchema]
   }
 });
 module.exports = mongoose.model('Board', BoardSchema);
