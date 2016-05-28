@@ -5,6 +5,7 @@ var Board = require('./board.model');
 
 // Get list of boards
 exports.index = function(req, res) {
+  console.log(req)
   Board.find(function (err, boards) {
     if(err) { return handleError(res, err); }
     return res.status(200).json(boards);
