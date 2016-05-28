@@ -19,6 +19,10 @@ var BoardSchema = new Schema({
   name: String,
   description: String,
   active: Boolean,
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   private: Boolean,
   type: {
     name: String,
